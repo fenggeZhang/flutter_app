@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_app/NewRoute.dart';
 
 void main() => runApp(MyApp());
 
@@ -55,6 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
+    void _test() {
+      final str = "hi world";
+      const str1 = "hi world";
+      const perform = const MethodChannel("android_log");
+      perform.invokeMapMethod("LogV", {});
+    }
   }
 
   @override
@@ -101,6 +109,18 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '我是内容',
               style: Theme.of(context).textTheme.display2,
+            ),
+            RaisedButton(
+              child: Text("打开新的路由"),
+              textColor: Colors.blue,
+              splashColor: Colors.limeAccent,
+              color: Colors.amberAccent,
+              onPressed: () {
+                //导航到新路由
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return NewRoute();
+                }));
+              },
             ),
           ],
         ),
