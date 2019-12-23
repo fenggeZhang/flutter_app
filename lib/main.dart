@@ -22,6 +22,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+      /*routes: {
+        "new_page":((context)=> NewRoute())
+      },*/
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -118,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 //导航到新路由
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return NewRoute();
+                  return NewRoute(text: "我是A页面的值",);
                 }));
               },
             ),
