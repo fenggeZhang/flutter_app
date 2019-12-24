@@ -19,6 +19,10 @@ class NewRoute extends StatelessWidget {
               }));
             },
           ),
+          new Image.asset('my_icons/all.png'),
+          new Image(
+            image: new AssetImage('my_icons/all.png'),
+          )
         ],
       )),
     );
