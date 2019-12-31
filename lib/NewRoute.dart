@@ -40,15 +40,19 @@ class NewRoute extends StatelessWidget {
               print("按下");
             },
           ),
-
-          new Image.asset('my_icons/all.png'),
-          new Image(
-            image: new AssetImage('my_icons/all.png'),
-          ),
-          //网络图片
-          Image.network(
-            "http://dmimg.5054399.com/allimg/pkm/pk/22.jpg",
-            width: 100,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new Image.asset('my_icons/all.png'),
+              new Image(
+                image: new AssetImage('my_icons/all.png'),
+              ),
+              //网络图片
+              Image.network(
+                "http://dmimg.5054399.com/allimg/pkm/pk/22.jpg",
+                width: 100,
+              ),
+            ],
           ),
 //          设置padding
           Padding(
