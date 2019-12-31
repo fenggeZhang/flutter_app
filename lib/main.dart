@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/NewRoute.dart';
+import 'package:flutter_app/ui/main_home1.dart';
 
 void main() => runApp(MyApp());
 
@@ -114,14 +115,28 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.display2,
             ),
             RaisedButton(
-              child: Text("打开新的路由"),
+              child: Text("打开新的路由1"),
               textColor: Colors.blue,
               splashColor: Colors.limeAccent,
               color: Colors.amberAccent,
               onPressed: () {
                 //导航到新路由
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return NewRoute(text: "我是A页面的值",);
+                  return NewRoute(
+                    text: "测试1页面",
+                  );
+                }));
+              },
+            ),
+            RaisedButton(
+              child: Text("测试2页面"),
+              textColor: Colors.blue,
+              splashColor: Colors.limeAccent,
+              color: Colors.amberAccent,
+              onPressed: () {
+                //导航到新路由
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return MainHome2();
                 }));
               },
             ),
