@@ -21,7 +21,6 @@ class _MainHome2 extends State<MainHome2> {
 
   @override
   Widget build(BuildContext context) {
-    getTopArticleList();
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -64,6 +63,7 @@ class _MainHome2 extends State<MainHome2> {
       _articles.add("文章头1");
       _articles.add("文章头2");
       _articles.add("文章头3");
+      print("刷新");
     });
   }
 
@@ -73,10 +73,25 @@ class _MainHome2 extends State<MainHome2> {
       _articles.add("文章内容1");
       _articles.add("文章内容2");
       _articles.add("文章内容3");
+      print("加载更多");
     });
+
     //没有数据了
 //    _refreshController.loadNoData();
     //数据加载失败
 //    _refreshController.loadFailed();
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    _scrollController.addListener(() {
+      /// 滑动到底部，加载更多
+      if (_scrollController.position.pixels ==
+          _scrollController.position.maxScrollExtent) {
+        // getMoreArticleList();
+      }
+    });
   }
 }
