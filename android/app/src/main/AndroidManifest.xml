@@ -10,6 +10,7 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="flutter_app"
         android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".MainActivity"

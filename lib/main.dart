@@ -101,7 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
@@ -115,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.display2,
             ),
             RaisedButton(
-              child: Text("打开新的路由1"),
+              child: Text("测试页面1"),
               textColor: Colors.blue,
               splashColor: Colors.limeAccent,
               color: Colors.amberAccent,
@@ -129,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             RaisedButton(
-              child: Text("测试2页面"),
+              child: Text("列表页面"),
               textColor: Colors.blue,
               splashColor: Colors.limeAccent,
               color: Colors.amberAccent,
