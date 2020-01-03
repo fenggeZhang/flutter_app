@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/NewRoute.dart';
-import 'package:flutter_app/ui/main_home1.dart';
+import 'package:flutter_app/ui/collect_list.dart';
+import 'package:flutter_app/ui_ac/main.dart';
+import 'package:flutter_app/utils/route_util.dart';
 
-void main() => runApp(MyApp());
+//void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -139,6 +141,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return MainHome2();
                 }));
+              },
+            ),
+            RaisedButton(
+              child: Text("我的主页"),
+              textColor: Colors.blue,
+              splashColor: Colors.limeAccent,
+              color: Colors.amberAccent,
+              onPressed: () {
+                //导航到新路由
+                RouteUtil.push(context, Main()); // 跳到主页
+                /*Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Main();
+                }));*/
               },
             ),
           ],
